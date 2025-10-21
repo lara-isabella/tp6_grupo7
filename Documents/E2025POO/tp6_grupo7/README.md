@@ -1,18 +1,15 @@
-## Getting Started
+# 💻 Programación Orientada a Objetos  
+### 🧠 Trabajo Práctico Nº5
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este repositorio contiene el desarrollo del TP5 para la materia **Programación Orientada a Objetos**
 
-## Folder Structure
 
-The workspace contains two folders by default, where:
+## 👥 Integrantes del Grupo 7
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+| Nombre             | GitHub                                      |
+|--------------------|---------------------------------------------|
+| Lara Colazo        | [@lara-isabella](https://github.com/lara-isabella) |
+| Luisana Pereira    | [@lulipereira](https://github.com/lulipereira)     |
+| Yamila Quipildor   | [@yamqp](https://github.com/yamqp)                 |
+| Lautaro Cari       | [@LauchaS2](https://github.com/LauchaS2)          |
+| Tomás Obeide       | [@TomiObeide](https://github.com/TomiObeide)      |
