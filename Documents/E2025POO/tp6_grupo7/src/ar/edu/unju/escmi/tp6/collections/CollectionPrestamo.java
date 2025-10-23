@@ -2,7 +2,6 @@ package ar.edu.unju.escmi.tp6.collections;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import ar.edu.unju.escmi.tp6.dominio.Prestamo;
 import ar.edu.unju.escmi.tp6.exceptions.PrestamoNoEncontradoException;
 
@@ -18,7 +17,7 @@ public class CollectionPrestamo {
         }
     }
 
-    // Devuelve un préstamo por su ID, o lanza una excepción si no existe
+    // Devuelve un préstamo por su ID, o lanza una excepción si no existe tal préstamo
       public static Prestamo buscarPrestamo(int id) throws PrestamoNoEncontradoException {
         Prestamo encontrado = prestamos.get(id);
         if (encontrado == null) {
@@ -26,7 +25,7 @@ public class CollectionPrestamo {
         }
         return encontrado;
     }
-    // Muestra todos los préstamos registrados
+    // Muestra todos los préstamos registrados, con o sin devoluciones
     public static void mostrarPrestamos() {
         if (prestamos.isEmpty()) {
             System.out.println("No hay préstamos cargados actualmente.");
