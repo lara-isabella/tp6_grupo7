@@ -38,21 +38,22 @@ public class Principal {
     // --------------------------------------------------------------------
     //  MÉTODOS DE LECTURA
     // --------------------------------------------------------------------
-public static int leerEntero() {
-    while (true) {
-        try {
-            String linea = scanner.nextLine();
-            if (linea.trim().isEmpty()) {
-                throw new EntradaInvalidaException("No se ingresó ningún valor.");
+    public static int leerEntero() {
+        while (true) {
+            try {
+                String linea = scanner.nextLine();
+                if (linea.trim().isEmpty()) {
+                    throw new EntradaInvalidaException("No se ingresó ningún valor.");
+                }
+                return Integer.parseInt(linea.trim());
+            } catch (NumberFormatException e) {
+                System.out.print("⚠️  Debe ingresar un número. Intente nuevamente: ");
+            } catch (EntradaInvalidaException e) {
+                System.out.print("⚠️  " + e.getMessage() + " Intente nuevamente: ");
             }
-            return Integer.parseInt(linea.trim());
-        } catch (NumberFormatException e) {
-            System.out.print("⚠️  Debe ingresar un número. Intente nuevamente: ");
-        } catch (EntradaInvalidaException e) {
-            System.out.print("⚠️  " + e.getMessage() + " Intente nuevamente: ");
         }
     }
-}
+
     public static String leerCadena() {
         return scanner.nextLine();
     }
@@ -156,26 +157,26 @@ public static int leerEntero() {
         }
     }
 
- private static void registrarDevolucion() {
-    System.out.println("\n🔁 Registrar devolución");
+    private static void registrarDevolucion() {
+        System.out.println("\n🔁 Registrar devolución");
 
-    try {
-        System.out.print("ID del préstamo: ");
-        int idPrestamo = leerEntero();
-        System.out.print("Fecha de devolución (dd/MM/yyyy): ");
-        String fechaStr = leerCadena();
+        try {
+            System.out.print("ID del préstamo: ");
+            int idPrestamo = leerEntero();
+            System.out.print("Fecha de devolución (dd/MM/yyyy): ");
+            String fechaStr = leerCadena();
 
-        Prestamo prestamo = CollectionPrestamo.buscarPrestamo(idPrestamo);
-        LocalDate fechaDevolucion = FechaUtil.convertirStringLocalDate(fechaStr);
-        prestamo.registrarDevolucion(fechaDevolucion);
+            Prestamo prestamo = CollectionPrestamo.buscarPrestamo(idPrestamo);
+            LocalDate fechaDevolucion = FechaUtil.convertirStringLocalDate(fechaStr);
+            prestamo.registrarDevolucion(fechaDevolucion);
 
-        System.out.println("✅ Devolución registrada correctamente.");
-    } catch (PrestamoNoEncontradoException e) {
-        System.out.println("⚠️  " + e.getMessage());
-    } catch (Exception e) {
-        System.out.println("⚠️  Error al registrar la devolución: " + e.getMessage());
+            System.out.println("✅ Devolución registrada correctamente.");
+        } catch (PrestamoNoEncontradoException e) {
+            System.out.println("⚠️  " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("⚠️  Error al registrar la devolución: " + e.getMessage());
+        }
     }
-}
 
     // --------------------------------------------------------------------
     //  LISTADOS
