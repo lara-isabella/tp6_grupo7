@@ -27,6 +27,54 @@ public class Principal {
                     break;
                 case 2:
                     System.out.println("Opción 2 seleccionada: REGISTRAR USUARIO");
+                    System.out.println("Seleccione tipo de usuario a registrar:");
+                    System.out.println("1 - Alumno");
+                    System.out.println("2 - Bibliotecario");
+                    System.out.print("Ingrese una opción: ");
+                    int tipo = sc.nextInt();
+                    sc.nextLine();
+
+                    if (tipo == 1) {
+                        System.out.print("Apellido: ");
+                        String apellido = sc.nextLine();
+                        System.out.print("Nombre: ");
+                        String nombre = sc.nextLine();
+                        System.out.print("DNI: ");
+                        int dni = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Email: ");
+                        String email = sc.nextLine();
+                        System.out.print("Curso: ");
+                        String curso = sc.nextLine();
+                        System.out.print("Numero de Libreta: ");
+                        int numLibreta= sc.nextInt();
+                        sc.nextLine();
+
+                        Alumno nuevo = new Alumno(dni, nombre, apellido, email, curso, numLibreta);
+                        CollectionUsuario.agregarUsuario(nuevo);
+                        System.out.println("Alumno registrado: " + nuevo.getNombre() + nuevo.getApellido());
+
+                    } else if (tipo == 2) {
+                        System.out.print("Apellido: ");
+                        String apellido = sc.nextLine();
+                        System.out.print("Nombre: ");
+                        String nombre = sc.nextLine();
+                        System.out.print("DNI: ");
+                        int dni = sc.nextInt();
+                        sc.nextLine();
+                        System.out.print("Email: ");
+                        String email = sc.nextLine();
+                        System.out.print("Legajo: ");
+                        int legajo = sc.nextInt();
+                        sc.nextLine();
+
+                        Bibliotecario nuevo = new Bibliotecario(dni, nombre, apellido, email, legajo);
+                        CollectionUsuario.agregarUsuario(nuevo);
+                        System.out.println("Bibliotecario registrado: " + nuevo.getNombre() + nuevo.getApellido());
+
+                    } else {
+                        System.out.println("Opción inválida. No se registró el usuario.");
+                    }
                     break;
                 case 3:
                     System.out.println("Opción 3 seleccionada: PRESTAMO DE UN LIBRO");
