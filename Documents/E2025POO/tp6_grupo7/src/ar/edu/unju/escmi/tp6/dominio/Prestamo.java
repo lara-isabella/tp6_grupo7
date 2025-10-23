@@ -6,14 +6,18 @@ public class Prestamo {
     private int id;
     private LocalDate fechaPrestamo;
     private LocalDate fechaDev;
+    private Libro libro;
+    private Usuario usuario;
 
     //CONSTRUCTORES
     public Prestamo() {
     }
-    public Prestamo(int id, LocalDate fechaPrestamo, LocalDate fechaDev) {
+    public Prestamo(int id, LocalDate fechaPrestamo, LocalDate fechaDev, Libro libro, Usuario usuario) {
         this.id = id;
         this.fechaPrestamo = fechaPrestamo;
         this.fechaDev = fechaDev;
+        this.libro = libro;
+        this.usuario = usuario;
     }
 
     //GETTERS Y SETTERS
@@ -35,6 +39,22 @@ public class Prestamo {
     public void setFechaDev(LocalDate fechaDev) {
         this.fechaDev = fechaDev;
     }
+
+    public Libro getLibro() {
+        return libro;
+    }
+
+    public void setLibro(Libro libro) {
+        this.libro = libro;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
     
     public void mostrarDatos() {
         System.out.println("********************************************");
@@ -47,13 +67,19 @@ public class Prestamo {
         } else {
             System.out.println(fechaDev);
         }
+        if (libro != null) {
+            System.out.println("Libro: " + libro.getTitulo());
+        }
+        if (usuario != null) {
+            System.out.println("Usuario: " + usuario.getNombre());
+        }
         System.out.println("********************************************");
     }
 
-    public void registrarDevolucion(){
+    public void registrarDevolucion(LocalDate fechaDevolucion){
         System.out.println("********************************************");
         System.out.println("Registrando devolucion...");
-        this.fechaDev = LocalDate.now();
+        this.fechaDev = fechaDevolucion;
         if (libro != null) {
             libro.setEstado(true);
             System.out.println("La devolucion se ha registrado.");
