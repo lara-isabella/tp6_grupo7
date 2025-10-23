@@ -21,5 +21,18 @@ public class Bibliotecario extends Usuario {
         this.legajo = legajo;
     }
 
-    
+    @Override
+    public String getTipoUsuario() {
+        return "Bibliotecario";
+    }
+
+    @Override
+    public void mostrarDatos() {
+        System.out.println("********************************************");
+        System.out.println("DATOS DEL BIBLIOTECARIO");
+        System.out.println("Alumno: " + getNombre() + " " + getApellido());
+        System.out.println("DNI: " + getDni());
+        System.out.println("Email: " + getEmail());
+        System.out.println("Legajo: " + legajo);
+    }
 }
