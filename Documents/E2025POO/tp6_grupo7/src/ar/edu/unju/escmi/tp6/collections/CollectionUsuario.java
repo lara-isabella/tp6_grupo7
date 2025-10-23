@@ -11,6 +11,15 @@ public class CollectionUsuario {
         usuarios.add(usuario);
     }
 
+    public static Usuario buscarUsuario(int dni) {
+        for (Usuario u : usuarios) {
+            if (u.getDni() == dni) {
+                return u;
+            }
+        }
+        return null;
+    }
+
     public static void mostrarUsuarios() {
         for (Usuario u : usuarios) {
             System.out.println("- " + u.getNombre() + " " + u.getApellido() + " (DNI: " + u.getDni() + ")");
