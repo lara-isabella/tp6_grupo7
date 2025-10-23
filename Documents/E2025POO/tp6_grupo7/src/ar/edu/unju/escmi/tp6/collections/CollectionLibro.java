@@ -2,7 +2,6 @@ package ar.edu.unju.escmi.tp6.collections;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import ar.edu.unju.escmi.tp6.dominio.Libro;
 import ar.edu.unju.escmi.tp6.exceptions.LibroNoDisponibleException;
 import ar.edu.unju.escmi.tp6.exceptions.LibroNoEncontradoException;
@@ -27,7 +26,7 @@ public class CollectionLibro {
         }
     }
 
-    // Ahora maneja también la disponibilidad del libro
+    // Maneja la disponibilidad del libro y lanza excepciones si lo necesita
     public static Libro buscarLibros(int id) throws LibroNoEncontradoException, LibroNoDisponibleException {
         Libro encontrado = libros.get(id);
 
