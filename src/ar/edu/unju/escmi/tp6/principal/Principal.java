@@ -204,12 +204,15 @@ public class Principal {
         // Precarga mínima de ejemplo (opcional)
         if (CollectionLibro.libros.isEmpty()) {
             CollectionLibro.agregarLibro(new Libro(1, "El Principito", "Antoine de Saint-Exupéry", 1111, true));
-            CollectionLibro.agregarLibro(new Libro(2, "Java Básico", "Autor Anónimo", 2222, true));
+            CollectionLibro.agregarLibro(new Libro(2, "El color que cayó del cielo", "Howard Phillips Lovecraft", 2222, true));
+            CollectionLibro.agregarLibro(new Libro(3, "El arte en ti", "Killer Queen", 3333, true));
+            CollectionLibro.agregarLibro(new Libro(4, "El amor en los tiempos del cólera", "Gabriel García Márquez", 4444, true));
+            CollectionLibro.agregarLibro(new Libro(5, "El hobbit", "J.R.R Tolkien", 5555, true));
         }
 
         if (CollectionUsuario.usuarios.isEmpty()) {
-            Alumno a = new Alumno(1, "Luisana", "Pereira", "luli@ejemplo.com", "4A", 1234);
-            Bibliotecario b = new Bibliotecario(2, "Yamila", "Gómez", "yami@ejemplo.com", 500);
+            Alumno a = new Alumno(1, "Ignacio", "Gonzales", "nachitogonza44@gmail.com", "6A", 4444);
+            Bibliotecario b = new Bibliotecario(2, "Tomas", "Abud", "tomasoabd@gmail.com", 700);
             CollectionUsuario.agregarUsuario(a);
             CollectionUsuario.agregarUsuario(b);
         }
