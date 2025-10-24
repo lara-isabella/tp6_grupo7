@@ -79,6 +79,10 @@ public class Prestamo {
     public void registrarDevolucion(LocalDate fechaDevolucion){
         System.out.println("********************************************");
         System.out.println("Registrando devolucion...");
+        if (fechaDevolucion.isBefore(fechaPrestamo)) {
+    System.out.println("⚠️ La fecha de devolución no puede ser anterior a la fecha de préstamo.");
+    return;
+}
         this.fechaDev = fechaDevolucion;
         if (libro != null) {
             libro.setEstado(true);
